@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground_custom">#cccccc</color>
     <color name="colorBackground_custom1">#e0dddd</color>
+    <color name="colorwhile">#ffffff</color>
 </resources>

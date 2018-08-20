@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 <gradient
     android:angle="0"
-    android:endColor="@color/colorBackground_custom1"
-    android:startColor="@color/colorBackground_custom"
+    android:endColor="@color/colorBackground_custom"
+    android:startColor="@color/colorBackground_custom1"
     android:type="linear" />
 
     <padding
