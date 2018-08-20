@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tab xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tab
+        id="@id/tab_home"
+        icon="@drawable/house_outline_black"
+        titleSize="6dp"
+        title="Home"
+        />
+    <tab
+        id="@id/tab_profile"
+        icon="@drawable/user_nav_black"
+        titleSize="6dp"
+        title="Profile"
+        />
+    <tab
+        id="@id/tab_favourites"
+        icon="@drawable/heart_black"
+        titleSize="6dp"
+        title="Favourites"
+        />
+    <tab
+        id="@id/tab_news"
+        icon="@drawable/newspaper_black"
+        titleSize="6dp"
+        title="News"
+        />
+    <tab
+        id="@id/tab_settings"
+        icon="@drawable/settings_black"
+        titleSize="6dp"
+        title="Settings"
+        />
+</Tab>

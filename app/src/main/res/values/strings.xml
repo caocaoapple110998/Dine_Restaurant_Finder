@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Dine_Restaurant_Finder</string>
-    <string name="notifications">NOTIFICATIONS</string>
-    <string name="Open">NavBar</string>
-    <string name="Close">NavBar</string>
 </resources>
