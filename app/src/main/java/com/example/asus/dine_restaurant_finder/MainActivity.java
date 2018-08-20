@@ -1,17 +1,13 @@
 package com.example.asus.dine_restaurant_finder;
 
-        import android.graphics.drawable.Drawable;
-        import android.os.Build;
         import android.os.Bundle;
-        import android.support.annotation.NonNull;
-        import android.support.design.widget.NavigationView;
-        import android.support.v4.widget.DrawerLayout;
-        import android.support.v7.app.ActionBarDrawerToggle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.MenuItem;
-        import android.view.Window;
-        import android.view.WindowManager;
-        import android.widget.Toast;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         dl = (DrawerLayout) findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this,dl,R.string.Open, R.string.Close);
+
         abdt.setDrawerIndicatorEnabled(true);
 
         dl.addDrawerListener(abdt);
