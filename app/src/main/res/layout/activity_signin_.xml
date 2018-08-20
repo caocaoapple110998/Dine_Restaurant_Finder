@@ -3,7 +3,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/custom_background"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    >
 
     <TextView
         android:layout_marginTop="100dp"
@@ -50,7 +52,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:text="Forgot password?"
         android:textColor="@color/color_SignIn"
         android:layout_marginTop="25dp"
