@@ -9,5 +9,6 @@
 
     <corners android:radius="150dp"/>
 
-    <solid android:color="@color/color_ChuDao"/>
+    <stroke android:color="#ffffff"
+        android:width="2dp"/>
 </shape>

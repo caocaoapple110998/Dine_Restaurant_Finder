@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/custom_background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/color_white"
+        android:textSize="25sp"
+        android:text="SIGN IN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textColorHint="@color/color_white"
+        android:textAlignment="center"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/custom_editext"
+        android:drawableLeft="@drawable/user"
+        android:paddingLeft="20dp"
+        android:hint="Username"
+        />
+
+    <EditText
+        android:textColorHint="@color/color_white"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_editext"
+        android:drawableLeft="@drawable/password"
+        android:hint="Password"
+        android:paddingLeft="20dp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:textColorHint="@color/color_white"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_editext"
+        android:drawableLeft="@drawable/password"
+        android:hint="Retype Password"
+        android:paddingLeft="20dp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:textColorHint="@color/color_white"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_editext"
+        android:drawableLeft="@drawable/password"
+        android:hint="Password"
+        android:paddingLeft="20dp"
+        android:textAlignment="center" />
+
+    <Button
+        android:textColor="@color/color_white"
+        android:text="SIGN UP"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_button"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="20sp"
+        android:text="Already have an account ? Sign in."
+        android:textColor="@color/color_white"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground_custom">#cccccc</color>
-    <color name="colorBackground_custom1">#ececec</color>
+    <color name="colorBackground_custom1">#e0dddd</color>
     <color name="colorwhile">#ffffff</color>
     <color name="color_ChuDao">#0077bb</color>
 </resources>
