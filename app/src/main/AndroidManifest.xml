@@ -17,9 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signin_Activity" />
-        <activity android:name=".SignUp_Activity"></activity>
-
+        <activity android:name=".SignUp_Activity" />
         <activity android:name=".Startup">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BottomBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
