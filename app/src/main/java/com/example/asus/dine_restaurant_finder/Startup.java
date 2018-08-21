@@ -15,10 +15,20 @@ public class Startup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup);
 
+
+        ControllStatusbar();
+        ControllActionbar();
+
+
+    }
+
+    private void ControllStatusbar(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow(); // in Activity's onCreate() for instance
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
-
+    }
+    private void ControllActionbar(){
+        getSupportActionBar().hide();
     }
 }
