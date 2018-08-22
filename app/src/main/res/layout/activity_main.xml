@@ -22,4 +22,23 @@
 
     </android.support.design.widget.NavigationView>
 
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
+        android:animateLayoutChanges="true">
+
+    </FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/color_white"
+        app:itemTextColor="@color/color_Menu"
+        app:menu="@menu/bottom_navigation_menu"/>
+
 </android.support.v4.widget.DrawerLayout>

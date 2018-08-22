@@ -22,11 +22,6 @@ public class Bottom_NavigationBar extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_bar);
 
-        InitEvent();
-
-    }
-
-    public void InitEvent() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,6 +56,7 @@ public class Bottom_NavigationBar extends AppCompatActivity  {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, Home_Fragment.newInstance());
         transaction.commit();
+
     }
 
 }
