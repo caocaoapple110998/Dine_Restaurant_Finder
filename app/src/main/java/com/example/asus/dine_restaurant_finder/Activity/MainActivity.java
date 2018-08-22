@@ -1,6 +1,5 @@
-package com.example.asus.dine_restaurant_finder;
+package com.example.asus.dine_restaurant_finder.Activity;
 
-        import android.app.Fragment;
         import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -10,10 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+        import com.example.asus.dine_restaurant_finder.Navigation.Bottom_NavigationBar;
+        import com.example.asus.dine_restaurant_finder.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private Bottom_NavigationBar bottom_navigationBar;
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        bottom_navigationBar.InitEvent();
 
         dl = (DrawerLayout) findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this,dl,R.string.Open, R.string.Close);
