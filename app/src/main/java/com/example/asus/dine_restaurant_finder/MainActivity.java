@@ -1,21 +1,27 @@
-package com.example.asus.dine_restaurant_finder.Activity;
+package com.example.asus.dine_restaurant_finder;
 
         import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
+        import android.support.design.widget.BottomNavigationView;
+        import android.support.design.widget.NavigationView;
+        import android.support.v4.app.Fragment;
+        import android.support.v4.app.FragmentTransaction;
+        import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
         import com.example.asus.dine_restaurant_finder.Navigation.Bottom_NavigationBar;
-        import com.example.asus.dine_restaurant_finder.R;
+        import com.example.asus.dine_restaurant_finder.fragment.Favourites_Fragment;
+        import com.example.asus.dine_restaurant_finder.fragment.Home_Fragment;
+        import com.example.asus.dine_restaurant_finder.fragment.News_Fragment;
+        import com.example.asus.dine_restaurant_finder.fragment.Profile_Fragment;
+        import com.example.asus.dine_restaurant_finder.fragment.Settings_Fragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private Bottom_NavigationBar bottom_navigationBar;
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
 
@@ -23,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        bottom_navigationBar.InitEvent();
-
+        BottomNavigationBar();
         dl = (DrawerLayout) findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this,dl,R.string.Open, R.string.Close);
 
@@ -86,6 +91,43 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void BottomNavigationBar() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()){
+                    case R.id.action_item1:
+                        selectedFragment = Home_Fragment.newInstance();
+                        break;
+                    case R.id.action_item2:
+                        selectedFragment = Profile_Fragment.newInstance();
+                        break;
+                    case R.id.action_item3:
+                        selectedFragment = Favourites_Fragment.newInstance();
+                        break;
+                    case R.id.action_item4:
+                        selectedFragment = News_Fragment.newInstance();
+                        break;
+                    case R.id.action_item5:
+                        selectedFragment = Settings_Fragment.newInstance();
+                        break;
+                }
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout, selectedFragment);
+                transaction.commit();
+
+                return true;
+            }
+        });
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, Home_Fragment.newInstance());
+        transaction.commit();
     }
 
 
