@@ -1,4 +1,4 @@
-package com.example.asus.dine_restaurant_finder.Activity;
+package com.example.asus.dine_restaurant_finder;
 
         import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
         import com.example.asus.dine_restaurant_finder.Navigation.Bottom_NavigationBar;
-        import com.example.asus.dine_restaurant_finder.R;
 
 
 public class MainActivity extends AppCompatActivity {

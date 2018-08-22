@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.asus.dine_restaurant_finder.Activity.MainActivity;
-
 public class Startup extends AppCompatActivity {
 
     MainActivity mainActivity;
