@@ -1,4 +1,4 @@
-package com.example.asus.dine_restaurant_finder;
+package com.example.asus.dine_restaurant_finder.Navigation;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,19 +8,25 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.example.asus.dine_restaurant_finder.R;
 import com.example.asus.dine_restaurant_finder.fragment.Favourites_Fragment;
 import com.example.asus.dine_restaurant_finder.fragment.Home_Fragment;
 import com.example.asus.dine_restaurant_finder.fragment.News_Fragment;
 import com.example.asus.dine_restaurant_finder.fragment.Profile_Fragment;
 import com.example.asus.dine_restaurant_finder.fragment.Settings_Fragment;
 
-public class BottomBar extends AppCompatActivity  {
+public class Bottom_NavigationBar extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_bar);
 
+        InitEvent();
+
+    }
+
+    public void InitEvent() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -55,7 +61,6 @@ public class BottomBar extends AppCompatActivity  {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, Home_Fragment.newInstance());
         transaction.commit();
-
     }
 
 }

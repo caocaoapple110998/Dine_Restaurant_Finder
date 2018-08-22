@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signin_Activity" />
-        <activity android:name=".SignUp_Activity" />
+        <activity android:name=".Activity.Signin_Activity" />
+        <activity android:name=".Activity.SignUp_Activity" />
         <activity android:name=".Startup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BottomBar">
+        <activity android:name=".Navigation.Bottom_NavigationBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
