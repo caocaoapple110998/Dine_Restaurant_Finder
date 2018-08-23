@@ -12,4 +12,5 @@
     <color name="color_detail">#d81b60</color>
     <color name="color_address_list1">#757575</color>
     <color name="color_located_list1">#aeaeae</color>
+    <color name="tabSelectedTextColor">#91d1f5</color>
 </resources>
