@@ -62,13 +62,15 @@ public class Fragment_NewList extends Fragment {
         drawerLayout = (DrawerLayout )view.findViewById(R.id.drawer_layout_newlist);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, R.string.Open, R.string.Close);
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        activity.getSupportActionBar().setHomeButtonEnabled(true);
+//        activity.getSupportActionBar().setHomeButtonEnabled(true);
 
-        NavigationView nav_view = (NavigationView) view.findViewById(R.id.nav_view_newlist);
+        final NavigationView nav_view = (NavigationView) view.findViewById(R.id.nav_view_newlist);
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -155,17 +157,17 @@ public class Fragment_NewList extends Fragment {
     }
 
 
-//        @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
-//    }
-    @Override
+        @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                drawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                drawerLayout.openDrawer(GravityCompat.START);
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }
