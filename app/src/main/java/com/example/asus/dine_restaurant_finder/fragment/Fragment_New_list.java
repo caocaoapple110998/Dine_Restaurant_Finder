@@ -26,7 +26,7 @@ public class Fragment_New_list extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_layout_list_1, container, false);
+        View v = inflater.inflate(R.layout.dong_layout_list_1, container, false);
 
 //        toolbar = (Toolbar) v.findViewById(R.id.toolbar);
 //        AppCompatActivity activity = (AppCompatActivity) getActivity();

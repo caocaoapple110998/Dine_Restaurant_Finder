@@ -67,7 +67,8 @@ public class Fragment_NewList extends Fragment {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        activity.getSupportActionBar().setHomeButtonEnabled(true);
 
         final NavigationView nav_view = (NavigationView) view.findViewById(R.id.nav_view_newlist);
