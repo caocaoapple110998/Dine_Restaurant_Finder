@@ -3,17 +3,23 @@ package com.example.asus.dine_restaurant_finder.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.asus.dine_restaurant_finder.Adapter.New_List_Adapter;
 import com.example.asus.dine_restaurant_finder.Event.New_List_Class;
+import com.example.asus.dine_restaurant_finder.MainActivity;
 import com.example.asus.dine_restaurant_finder.R;
 
 import java.util.ArrayList;
@@ -23,6 +29,9 @@ import java.util.ArrayList;
  */
 
 public class Fragment_NewList extends Fragment {
+
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
 
     ListView lv_newlist;
     ArrayList<New_List_Class> arrayList;
@@ -41,8 +50,71 @@ public class Fragment_NewList extends Fragment {
         
         initToolBar(view);
         initEvent(view);
+        initNav(view);
         adapter = new New_List_Adapter(getContext(),arrayList, R.layout.dong_new_list);
         lv_newlist.setAdapter(adapter);
+    }
+
+    private void initNav(View view) {
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+
+        drawerLayout = (DrawerLayout )view.findViewById(R.id.drawer_layout_newlist);
+
+        actionBarDrawerToggle = new ActionBarDrawerToggle(activity, drawerLayout, R.string.Open, R.string.Close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        NavigationView nav_view = (NavigationView) view.findViewById(R.id.nav_view_newlist);
+
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+
+                if (id == R.id.notification)
+                {
+                    Toast.makeText(getContext(),"My Profile", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.news)
+                {
+                    Toast.makeText(getContext(),"My news", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.bookmarks)
+                {
+                    Toast.makeText(getContext(),"My bookmarks", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.offers)
+                {
+                    Toast.makeText(getContext(),"My offers", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.orders)
+                {
+                    Toast.makeText(getContext(),"My orders", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.payments)
+                {
+                    Toast.makeText(getContext(),"My payments", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.comments)
+                {
+                    Toast.makeText(getContext(),"My comments", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.profile)
+                {
+                    Toast.makeText(getContext(),"My Profile", Toast.LENGTH_LONG).show();
+                }
+                if (id == R.id.settings)
+                {
+                    Toast.makeText(getContext(),"My settings", Toast.LENGTH_LONG).show();
+                }
+
+
+                return true;
+            }
+        });
     }
 
     private void initEvent(View view) {
@@ -78,6 +150,12 @@ public class Fragment_NewList extends Fragment {
         activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+    }
+
+
+        @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
     
 }
