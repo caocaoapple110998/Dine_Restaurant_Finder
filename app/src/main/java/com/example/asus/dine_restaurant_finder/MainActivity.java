@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.asus.dine_restaurant_finder.fragment.FragmentDemo;
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,16 +113,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapterHD adapter = new ViewPagerAdapterHD(getSupportFragmentManager());
-        adapter.addFragment(new FragmentDemo(), "AMS");
-        adapter.addFragment(new FragmentDemo(), "Explore");
-        adapter.addFragment(new FragmentDemo(), "List");
-        adapter.addFragment(new FragmentDemo(), "Map");
-        adapter.addFragment(new FragmentDemo(), "Favorites");
-        adapter.addFragment(new FragmentDemo(), "Account");
+        adapter.addFragment(new Fragment_Tablayout_List1(), "Home");
+        adapter.addFragment(new FragmentDemo(), "Profile");
+        adapter.addFragment(new FragmentDemo(), "Favourites");
+        adapter.addFragment(new FragmentDemo(), "News");
+        adapter.addFragment(new FragmentDemo(), "Settings");
         viewPager.setAdapter(adapter);
     }
 
-    static class ViewPagerAdapterHD extends FragmentPagerAdapter {
+    public static class ViewPagerAdapterHD extends FragmentPagerAdapter {
         private List<Fragment> mFragmentList = new ArrayList<>();
         private List<String> mFragnebtTitleList = new ArrayList<>();
 
@@ -151,16 +151,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//
-//    private void setupViewPager(ViewPager viewPager) {
-//        Adapter_Bottom_NavigationBar.ViewPagerAdapter adapter = new Adapter_Bottom_NavigationBar.ViewPagerAdapter(getSupportFragmentManager());
-//        adapter.addFragment(new Favourites_Fragment(), "Home");
-//        adapter.addFragment(new Favourites_Fragment(), "Profile");
-//        adapter.addFragment(new Favourites_Fragment(), "Favourites");
-//        adapter.addFragment(new Favourites_Fragment(), "News");
-//        adapter.addFragment(new Favourites_Fragment(), "Settings");
-//        viewPager.setAdapter(adapter);
-//    }
 
 
     private void setupTabIcons() {
@@ -179,9 +169,6 @@ public class MainActivity extends AppCompatActivity {
 //    }
 //
 //
-//    private void CreateToolbar() {
-//
-//    }
 //
 //    @Override
 //    public boolean onCreateOptionsMenu( Menu menu) {
