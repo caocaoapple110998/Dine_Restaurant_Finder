@@ -10,39 +10,40 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.example.asus.dine_restaurant_finder.Adapter.Item_list2_Adapter;
-import com.example.asus.dine_restaurant_finder.Item_list2;
+import com.example.asus.dine_restaurant_finder.Event.New_List_Class;
 import com.example.asus.dine_restaurant_finder.R;
 
 import java.util.ArrayList;
 
 public class Fragment_Tablayout_List2 extends Fragment {
 
-    GridView gridView;
-    ArrayList<Item_list2> arrayList;
+    GridView gv_newlist;
+    ArrayList<New_List_Class> arrayList;
     Item_list2_Adapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.item_layout_list_2, container, false);
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-        init(view);
-        adapter = new Item_list2_Adapter(getContext(), R.layout.item_layout_list_2, arrayList);
-        gridView.setAdapter(adapter);
+        initEvent(view);
+        adapter = new Item_list2_Adapter(getContext(),arrayList, R.layout.item_layout_list_2);
+        gv_newlist.setAdapter(adapter);
     }
 
-    private void init(View view) {
-        gridView = view.findViewById(R.id.girdview_fragment_layout_list_2);
+    private void initEvent(View view) {
+        gv_newlist = view.findViewById(R.id.girdview_fragment_layout_list_2);
         arrayList = new ArrayList<>();
-        arrayList.add(new Item_list2("", R.drawable.anhdep));
-    }
 
+//        arrayList.add(new Item_list2_Adapter(
+//        ));
+    }
 
 }
