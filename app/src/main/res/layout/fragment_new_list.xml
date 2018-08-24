@@ -17,7 +17,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:titleTextColor="@android:color/white"
-                android:background="@color/color_ChuDao">
+                android:background="@color/color_ChuDao"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
                 <TextView
                     android:id="@+id/toolbar_title"
@@ -34,7 +35,7 @@
                 android:layout_marginTop="55dp"
                 android:id="@+id/lv_newlist"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
             </ListView>
         </FrameLayout>
