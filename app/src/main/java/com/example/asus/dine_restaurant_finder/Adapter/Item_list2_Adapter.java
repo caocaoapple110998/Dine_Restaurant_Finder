@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.asus.dine_restaurant_finder.Item_list2;
 import com.example.asus.dine_restaurant_finder.R;
@@ -40,6 +41,7 @@ public class Item_list2_Adapter extends BaseAdapter{
     }
 
     private class ViewHolder{
+        TextView txtTen;
         ImageView imgHinh;
     }
 
@@ -50,11 +52,20 @@ public class Item_list2_Adapter extends BaseAdapter{
 
         if (view == null){
             holder = new ViewHolder();
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout, null );
             holder.imgHinh = view.findViewById(R.id.img_item_layout_list2);
+            holder.txtTen =  view.findViewById(R.id.txtten);
+            view.setTag(holder);
+        }else {
+            holder = (ViewHolder) view.getTag();
+
         }
 
-        return null;
+        Item_list2 item_list2 = item_list2List.get(i);
+        holder.imgHinh.setImageResource(item_list2.getHinh());
+        holder.txtTen.setText(item_list2.getTen());
+
+        return view;
     }
 }
