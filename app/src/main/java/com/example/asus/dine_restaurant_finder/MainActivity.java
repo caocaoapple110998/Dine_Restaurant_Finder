@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.asus.dine_restaurant_finder.fragment.FragmentDemo;
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_NewList;
 import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List2;
 
 import java.util.ArrayList;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new Fragment_Tablayout_List2(), "Home");
         adapter.addFragment(new FragmentDemo(), "Profile");
         adapter.addFragment(new FragmentDemo(), "Favourites");
-        adapter.addFragment(new FragmentDemo(), "News");
+        adapter.addFragment(new Fragment_NewList(), "News");
         adapter.addFragment(new FragmentDemo(), "Settings");
         viewPager.setAdapter(adapter);
     }

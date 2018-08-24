@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -50,6 +49,21 @@ public class Fragment_NewList extends Fragment {
         lv_newlist = (ListView) view.findViewById(R.id.lv_newlist);
         arrayList = new ArrayList<>();
 
+        arrayList.add(new New_List_Class(
+                "Restaurants may be classified or distinguished in different ways.",
+                "2nd July 2017",
+                "The primary factors are usually the food itself the cuisine and/or the style of offering Beyond this, restaurants may differentiate themselves on factors including speed formality, location, cost, service, or novelty themes.",
+                R.drawable.newlist));
+        arrayList.add(new New_List_Class(
+                "Restaurants may be classified or distinguished in different ways.",
+                "2nd July 2017",
+                "The primary factors are usually the food itself the cuisine and/or the style of offering Beyond this, restaurants may differentiate themselves on factors including speed formality, location, cost, service, or novelty themes.",
+                R.drawable.newlist));
+        arrayList.add(new New_List_Class(
+                "Restaurants may be classified or distinguished in different ways.",
+                "2nd July 2017",
+                "The primary factors are usually the food itself the cuisine and/or the style of offering Beyond this, restaurants may differentiate themselves on factors including speed formality, location, cost, service, or novelty themes.",
+                R.drawable.newlist));
         arrayList.add(new New_List_Class(
                 "Restaurants may be classified or distinguished in different ways.",
                 "2nd July 2017",
