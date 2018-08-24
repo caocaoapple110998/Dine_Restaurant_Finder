@@ -13,7 +13,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.asus.dine_restaurant_finder.fragment.FragmentDemo;
-import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List1;
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapterHD adapter = new ViewPagerAdapterHD(getSupportFragmentManager());
-        adapter.addFragment(new Fragment_Tablayout_List1(), "Home");
+        adapter.addFragment(new Fragment_Tablayout_List2(), "Home");
         adapter.addFragment(new FragmentDemo(), "Profile");
         adapter.addFragment(new FragmentDemo(), "Favourites");
         adapter.addFragment(new FragmentDemo(), "News");
