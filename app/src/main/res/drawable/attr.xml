@@ -4,6 +4,7 @@
     <item>
         <shape android:shape="oval">
             <solid android:color="#cccccc"/>
+            <gradient android:gradientRadius="100dp"/>
         </shape>
     </item>
     <item

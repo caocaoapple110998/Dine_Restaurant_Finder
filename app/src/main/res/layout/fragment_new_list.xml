@@ -13,28 +13,28 @@
             android:id="@+id/Ln_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context="com.example.asus.dine_restaurant_finder.MainActivity">
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:minHeight="?attr/actionBarSize"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:titleTextColor="@android:color/white"
-                android:background="@color/color_ChuDao"
-                android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+            android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="NEW UPDATES"
-                    android:textColor="@android:color/white"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-                    android:layout_gravity="center"
-                    />
+            <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--android:minHeight="?attr/actionBarSize"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:titleTextColor="@android:color/white"-->
+                <!--android:background="@color/color_ChuDao"-->
+                <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
 
-            </android.support.v7.widget.Toolbar>
+                <!--<TextView-->
+                    <!--android:id="@+id/toolbar_title"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="NEW UPDATES"-->
+                    <!--android:textColor="@android:color/white"-->
+                    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--/>-->
+
+            <!--</android.support.v7.widget.Toolbar>-->
             <ListView
                 android:id="@+id/lv_newlist"
                 android:layout_width="match_parent"
@@ -46,9 +46,14 @@
         <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
         <android.support.design.widget.NavigationView
             android:id="@+id/nav_view_newlist"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+
+            android:background="#373737"
+            app:itemTextColor="@color/color_white"
+            app:itemIconTint="@color/color_white"
             app:headerLayout="@layout/navigation_header"
             app:menu="@menu/navigation_menu" />
 

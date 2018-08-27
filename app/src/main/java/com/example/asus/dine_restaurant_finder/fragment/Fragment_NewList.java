@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asus.dine_restaurant_finder.Adapter.New_List_Adapter;
 import com.example.asus.dine_restaurant_finder.Event.New_List_Class;
-import com.example.asus.dine_restaurant_finder.MainActivity;
 import com.example.asus.dine_restaurant_finder.R;
 
 import java.util.ArrayList;
@@ -54,24 +51,26 @@ public class Fragment_NewList extends Fragment {
         initNav(view);
         adapter = new New_List_Adapter(getContext(),arrayList, R.layout.dong_new_list);
         lv_newlist.setAdapter(adapter);
+
+
     }
 
     private void initNav(View view) {
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
+//        AppCompatActivity activity = (AppCompatActivity) getActivity();
 
         drawerLayout = (DrawerLayout )view.findViewById(R.id.drawer_layout_newlist);
+
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, R.string.Open, R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        activity.getSupportActionBar().setHomeButtonEnabled(true);
 
         final NavigationView nav_view = (NavigationView) view.findViewById(R.id.nav_view_newlist);
+
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -154,7 +153,7 @@ public class Fragment_NewList extends Fragment {
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+//        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
     }
 
 

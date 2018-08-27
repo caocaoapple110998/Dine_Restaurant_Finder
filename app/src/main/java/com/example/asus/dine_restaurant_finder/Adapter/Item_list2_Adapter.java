@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.asus.dine_restaurant_finder.Event.New_List_Class;
+import com.example.asus.dine_restaurant_finder.Event.Item_list2_Class;
 import com.example.asus.dine_restaurant_finder.R;
 
 import java.util.ArrayList;
@@ -16,14 +16,8 @@ import java.util.ArrayList;
 public class Item_list2_Adapter extends BaseAdapter{
 
     private Context context;
-    private ArrayList<New_List_Class> arrayList;
+    private ArrayList<Item_list2_Class> arrayList;
     private int layout;
-
-    public Item_list2_Adapter(Context context, ArrayList<New_List_Class> arrayList, int layout) {
-        this.context = context;
-        this.arrayList = arrayList;
-        this.layout = layout;
-    }
 
     @Override
     public int getCount() {
@@ -42,21 +36,17 @@ public class Item_list2_Adapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        view = layoutInflater.inflate(layout,null);
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(layout,null);
-
-        ImageView img_item_layout_list2 = view.findViewById(R.id.img_item_layout_list2);
-        TextView txtrating_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtten_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtmota_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtdiachi_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtgia_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtsave_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtgiacu_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-        TextView txtngay_item_layout_list2 = view.findViewById(R.id.txtrating_item_layout_list2);
-
-        New_List_Class item_list2_adapter = arrayList.get(i);
+        TextView txtten=(TextView)view.findViewById(R.id.txtten_item_layout_list2);
+        TextView txtdiachi=(TextView)view.findViewById(R.id.txtdiachi_item_layout_list2);
+        TextView txtmota=(TextView)view.findViewById(R.id.txtmota_item_layout_list2);
+        TextView txtgia=(TextView)view.findViewById(R.id.txtgia_item_layout_list2);
+        TextView txtsave=(TextView)view.findViewById(R.id.txtsave_item_layout_list2);
+        TextView txtgiacu=(TextView)view.findViewById(R.id.txtgiacu_item_layout_list2);
+        TextView txtngay=(TextView)view.findViewById(R.id.txtngay_item_layout_list2);
+        ImageView imganh=(ImageView)view.findViewById(R.id.img_item_layout_list2);
 
         return view;
     }
