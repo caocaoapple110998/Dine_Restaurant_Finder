@@ -2,7 +2,7 @@
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/custom_background"
+    android:background="@drawable/background"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:fitsSystemWindows="true"
     >
@@ -18,6 +18,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:id="@+id/editUsername_login"
         android:textColorHint="@color/color_white"
         android:textAlignment="center"
         android:layout_width="250dp"
@@ -31,6 +32,7 @@
         />
 
     <EditText
+        android:id="@+id/editPassword_login"
         android:textColorHint="@color/color_white"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
         android:textAlignment="center" />
 
     <Button
+        android:id="@+id/btnLogin"
         android:textColor="@color/color_white"
         android:text="SIGN IN"
         android:layout_marginTop="30dp"

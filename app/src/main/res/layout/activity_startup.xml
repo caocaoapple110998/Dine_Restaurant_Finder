@@ -39,7 +39,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin_Dine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -63,12 +63,12 @@
         android:text="or"
         android:textColor="@color/colorwhile"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4" />
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister_Dine"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister_Dine"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister_Dine" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRegister_Dine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

@@ -11,10 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_NewList;
+
 //import com.example.asus.dine_restaurant_finder.fragment.Favourites_Fragment;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static Toolbar mToolbar;
 //    private ViewPager viewPager;
 //    private TabLayout tabLayout;
 
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 //        interfaceVariable();
 
         ///////////////////////////////////////////////////////////////////////////
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
 
         /////////////////////////////////////////////////////////////////////////
@@ -51,14 +53,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+
+                drawerLayout.closeDrawers();
+
                 int id = item.getItemId();
 
                 if (id == R.id.notification)
                 {
+
                     Toast.makeText(MainActivity.this,"My Profile", Toast.LENGTH_LONG).show();
                 }
                 if (id == R.id.news)
                 {
+                    android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.ftmain, new Fragment_NewList());
+                    ft.commit();
                     Toast.makeText(MainActivity.this,"My news", Toast.LENGTH_LONG).show();
                 }
                 if (id == R.id.bookmarks)
@@ -96,6 +107,39 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+//    private void DisplaySelectedScreen(int id){
+//        Fragment fragment = null;
+//
+//        switch (id){
+//            case R.id.notification:
+//                break;
+//            case R.id.news:
+//                fragment = new Fragment_NewList();
+//                break;
+//            case R.id.bookmarks:
+//                break;
+//            case R.id.offers:
+//                break;
+//            case R.id.payments:
+//                break;
+//            case R.id.comments:
+//                break;
+//            case R.id.profile:
+//                break;
+//            case R.id.settings:
+//                break;
+//        }
+//
+//        if (fragment != null){
+//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.demo1, fragment);
+//            ft.commit();
+//        }
+//        drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout_main) ;
+//        drawerLayout.closeDrawer(GravityCompat.START);
+//
+//    }
 
 //    private void interfaceVariable() {
 ////        viewPager = (ViewPager) findViewById(R.id.viewPagerHome);
@@ -160,6 +204,9 @@ public class MainActivity extends AppCompatActivity {
 //    //////////////////////////////////////////////////////////////////
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        DisplaySelectedScreen(id);
+//        return  true;
         return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 //
