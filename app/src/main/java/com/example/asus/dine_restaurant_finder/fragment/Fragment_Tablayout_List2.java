@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.asus.dine_restaurant_finder.Adapter.Item_list2_Adapter;
@@ -17,14 +18,14 @@ import java.util.ArrayList;
 
 public class Fragment_Tablayout_List2 extends Fragment {
 
-    ListView lv_newlist;
+    GridView gv_newlist2;
     ArrayList<Item_list2_Class> arrayList;
     Item_list2_Adapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.item_layout_list_2, container, false);
+        return inflater.inflate(R.layout.dong_layout_list_2, container, false);
     }
 
     @Override
@@ -35,7 +36,6 @@ public class Fragment_Tablayout_List2 extends Fragment {
     }
 
     private void initEvent(View view) {
-        lv_newlist = (ListView) view.findViewById(R.id.girdview_fragment_layout_list_2);
-        arrayList = new ArrayList<>();
+        gv_newlist2 = (GridView) view.findViewById(R.id.girdview_fragment_layout_list_2);
     }
 }
