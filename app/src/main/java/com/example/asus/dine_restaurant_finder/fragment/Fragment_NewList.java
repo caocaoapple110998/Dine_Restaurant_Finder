@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class Fragment_NewList extends Fragment {
 
 
-    String urlGetData = "http://192.168.1.227/ThucTap/getnewlist.php";
+    String urlgetnewlist = "http://192.168.1.227/ThucTap/getnewlist.php";
 
     ListView lv_NewList;
     ArrayList<NewList> arrayList;
@@ -59,12 +59,12 @@ public class Fragment_NewList extends Fragment {
         adapter = new NewList_Adapter(getActivity(), R.layout.dong_new_list, arrayList);
         lv_NewList.setAdapter(adapter);
 
-        GetData(urlGetData);
+        GetData(urlgetnewlist);
     }
 
-    private void GetData(String url){
+    private void GetData(String urlnewlist){
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlnewlist, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {

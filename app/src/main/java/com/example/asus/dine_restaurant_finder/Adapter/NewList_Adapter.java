@@ -55,6 +55,7 @@ public class NewList_Adapter extends BaseAdapter {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout, null);
+
             holder.txtTitle = (TextView) view.findViewById(R.id.txttieude_newlis);
             holder.txtContent = (TextView) view.findViewById(R.id.txtnoidung_newlist);
             holder.txtDate = (TextView) view.findViewById(R.id.txtngay_newlist);

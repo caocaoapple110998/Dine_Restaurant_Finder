@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.asus.dine_restaurant_finder.Event.Item_List1_Class;
 import com.example.asus.dine_restaurant_finder.R;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 24/08/2018.
@@ -22,48 +22,61 @@ public class Item_list1_Adapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private ArrayList<Item_List1_Class> arrayList;
+    private List<Item_List1_Class> List1list;
 
-    public Item_list1_Adapter(Context context, int layout, ArrayList<Item_List1_Class> arrayList) {
+    public Item_list1_Adapter(Context context, int layout, List<Item_List1_Class> list1list) {
         this.context = context;
         this.layout = layout;
-        this.arrayList = arrayList;
+        List1list = list1list;
     }
 
     @Override
     public int getCount() {
-        return arrayList.size();
+        return List1list.size();
     }
 
     @Override
-    public Object getItem(int position) {
+    public Object getItem(int i) {
         return null;
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(int i) {
         return 0;
     }
 
+    private class ViewHolder{
+        TextView txtTitle_list1, txtAddress_list1;
+        ImageView imgHinh_list1;
+    }
+
     @Override
-    public View getView(int i, View v, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.dong_layout_list_1, null);
+    public View getView(int i, View view_list1, ViewGroup viewGroup) {
 
-        TextView txtTieuDe = (TextView) v.findViewById(R.id.txt_tieude_item_list1);
-        TextView txtLocated = (TextView) v.findViewById(R.id.txt_located_item_list1);
-        TextView txtDiaChi = (TextView) v.findViewById(R.id.txt_diachi_item_list1);
-        TextView txtDetail = (TextView) v.findViewById(R.id.txt_view_detail_item_list1);
-        RatingBar ratingBar = (RatingBar) v.findViewById(R.id.ratingBar_item_list1);
-        ImageView imgHinh = (ImageView) v.findViewById(R.id.img_item_layout_list1);
+        ViewHolder holder_list1;
 
-        Item_List1_Class  item_list1_class = arrayList.get(i);
+        if (view_list1 == null){
+            holder_list1 = new ViewHolder();
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            view_list1 = layoutInflater.inflate(layout,null);
+            holder_list1.txtTitle_list1=(TextView)view_list1.findViewById(R.id.txt_tieude_item_list1);
+            holder_list1.txtAddress_list1=(TextView)view_list1.findViewById(R.id.txt_diachi_item_list1);
+            holder_list1.imgHinh_list1=(ImageView)view_list1.findViewById(R.id.img_item_layout_list1);
 
-        txtTieuDe.setText(item_list1_class.getTieude());
-        txtLocated.setText(item_list1_class.getLocated());
-        txtDiaChi.setText(item_list1_class.getDiachi());
-        txtDetail.setText(item_list1_class.getDetail());
-        imgHinh.setImageResource(item_list1_class.getHinh());
-        return v;
+            view_list1.setTag(holder_list1);
+        }else {
+            holder_list1 = (ViewHolder) view_list1.getTag();
+        }
+
+        Item_List1_Class item_list1_class = List1list.get(i);
+
+        holder_list1.txtTitle_list1.setText(item_list1_class.getTitle());
+        holder_list1.txtAddress_list1.setText(item_list1_class.getAddress());
+        Picasso.with(context).load(item_list1_class.getImgHinh())
+                .placeholder(R.drawable.anhdep)
+                .error(R.drawable.background_signup)
+                .into(holder_list1.imgHinh_list1);
+
+        return view_list1;
     }
 }

@@ -1,118 +1,94 @@
 package com.example.asus.dine_restaurant_finder.fragment;
 
 
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.asus.dine_restaurant_finder.Adapter.Item_list1_Adapter;
+import com.example.asus.dine_restaurant_finder.Event.Item_List1_Class;
+import com.example.asus.dine_restaurant_finder.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class Fragment_Tablayout_List1 extends Fragment {
-//    private FragmentActivity myContext;
-//    private Toolbar toolbar;
-//    private ViewPager fragment_viewPager;
-//    private TabLayout fragment_tabLayout;
-//
-//    public static Home_Fragment newInstance() {
-//        Home_Fragment fragment = new Home_Fragment();
-//        return fragment;
-//    }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        View v = inflater.inflate(R.layout.fragment_tablayout_list_1, container, false);
-//
-//        fragment_viewPager = (ViewPager) v.findViewById(R.id.viewPagerHome);
-//        fragment_tabLayout = (TabLayout) v.findViewById(R.id.tabLayoutHome);
-//
-//        setupViewPager(fragment_viewPager);
-//        fragment_tabLayout.setupWithViewPager(fragment_viewPager);
-//
-//        toolbar = (Toolbar) v.findViewById(R.id.toolbar);
-//        AppCompatActivity activity = (AppCompatActivity) getActivity();
-//        activity.setSupportActionBar(toolbar);
-//
-//
-//
-//        return v;
-//    }
-//    //////////////////////////////////////////////////////////////////////////////////
-//
-//    private void setupViewPager(ViewPager viewPager) {
-//        FragmentManager fragManager = myContext.getSupportFragmentManager();
-//        ViewPagerAdapterHD1 adapter = new ViewPagerAdapterHD1(fragManager);
-//        adapter.addFragment(new Fragment_Tablayout_List1(), "Home");
-//        adapter.addFragment(new FragmentDemo(), "Profile");
-//        viewPager.setAdapter(adapter);
-//    }
-//
-//
-//    @Override
-//    public void onAttach(Activity activity) {
-//        myContext=(FragmentActivity) activity;
-//        super.onAttach(activity);
-//    }
-//
-//
-//
-//
-//    public static class ViewPagerAdapterHD1 extends FragmentPagerAdapter {
-//        private List<Fragment> mFragmentList = new ArrayList<>();
-//        private List<String> mFragnebtTitleList = new ArrayList<>();
-//
-//        public ViewPagerAdapterHD1(FragmentManager fm) {
-//            super(fm);
-//        }
-//
-//        @Override
-//        public Fragment getItem(int position) {
-//            return mFragmentList.get(position);
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return mFragmentList.size();
-//        }
-//
-//        public void addFragment(Fragment fragment, String title){
-//            mFragmentList.add(fragment);
-//            mFragnebtTitleList.add(title);
-//        }
-//
-//        @Nullable
-//        @Override
-//        public CharSequence getPageTitle(int position) {
-//            return mFragnebtTitleList.get(position);
-//        }
-//    }
-//
-/////////////////////////////////////////////////////////////////////////////////////////////
-//    public boolean onCreateOptionsMenu( Menu menu) {
-//        getActivity().getMenuInflater().inflate( R.menu.menu_search_toolbar, menu);
-//
-//
-//        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
-//        final SearchView searchView = (SearchView) myActionMenuItem.getActionView();
-//        searchView.setQueryHint("Search by landmark");
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                if (TextUtils.isEmpty(newText)) {
-//
-//                } else {
-//                }
-//                return true;
-//            }
-//        });
-//
-//        return true;
-//    }
 
+    String urlgetlist1 = "http://192.168.1.227/ThucTap/getlist1.php";
+
+    GridView gv_list1;
+
+    ArrayList<Item_List1_Class> arrayList_list1;
+    Item_list1_Adapter adapter_list1;
+
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_layout_list1, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        getActivity().setTitle("List 1");
+
+        gv_list1 = (GridView)view.findViewById(R.id.gv_item_list1);
+        arrayList_list1 = new ArrayList<>();
+
+        adapter_list1 = new Item_list1_Adapter(getActivity(), R.layout.dong_layout_list_1, arrayList_list1);
+        gv_list1.setAdapter(adapter_list1);
+
+        GetList1(urlgetlist1);
+    }
+
+    private void GetList1(String urlgetlist1) {
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlgetlist1, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject object_list1 = response.getJSONObject(i);
+                                arrayList_list1.add(new Item_List1_Class(
+                                        object_list1.getInt("ID"),
+                                        object_list1.getString("Title"),
+                                        object_list1.getString("Address"),
+                                        object_list1.getString("ImgHinh")
+                                ));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        adapter_list1.notifyDataSetChanged();
+//                            Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(), "Lỗi", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
 }

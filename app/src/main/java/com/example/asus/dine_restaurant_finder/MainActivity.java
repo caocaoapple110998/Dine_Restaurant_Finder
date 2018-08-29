@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.asus.dine_restaurant_finder.fragment.Fragment_NewList;
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List1;
+import com.example.asus.dine_restaurant_finder.fragment.Fragment_Tablayout_List2;
 
 //import com.example.asus.dine_restaurant_finder.fragment.Favourites_Fragment;
 
@@ -74,11 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (id == R.id.bookmarks)
                 {
-                    Toast.makeText(MainActivity.this,"My bookmarks", Toast.LENGTH_LONG).show();
+                    android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.ftmain, new Fragment_Tablayout_List2());
+                    ft.commit();
+//                    Toast.makeText(MainActivity.this,"My bookmarks", Toast.LENGTH_LONG).show();
                 }
                 if (id == R.id.offers)
                 {
-                    Toast.makeText(MainActivity.this,"My offers", Toast.LENGTH_LONG).show();
+                    android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.ftmain, new Fragment_Tablayout_List1());
+                    ft.commit();
+//                    Toast.makeText(MainActivity.this,"My offers", Toast.LENGTH_LONG).show();
                 }
                 if (id == R.id.orders)
                 {

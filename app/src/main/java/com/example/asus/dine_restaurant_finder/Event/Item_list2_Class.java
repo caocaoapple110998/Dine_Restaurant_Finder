@@ -2,97 +2,108 @@ package com.example.asus.dine_restaurant_finder.Event;
 
 public class Item_list2_Class {
 
-    private String rating;
-    private String ten;
-    private String mota;
-    private String diachi;
-    private String gia;
-    private String save;
-    private String giacu;
-    private String ngay;
-    private int anh;
+    private int Id;
+    private String Rating;
+    private String Name;
+    private String Address;
+    private String Foods;
+    private String Price;
+    private String Save;
+    private String Old_price;
+    private String Date;
+    private String Imghinh;
 
-    public Item_list2_Class(String rating, String ten, String mota, String diachi, String gia, String save, String giacu, String ngay, int anh) {
-        this.rating = rating;
-        this.ten = ten;
-        this.mota = mota;
-        this.diachi = diachi;
-        this.gia = gia;
-        this.save = save;
-        this.giacu = giacu;
-        this.ngay = ngay;
-        this.anh = anh;
+
+    public Item_list2_Class(int id, String rating, String name, String address, String foods, String price, String save, String old_price, String date, String imghinh) {
+        Id = id;
+        Rating = rating;
+        Name = name;
+        Address = address;
+        Foods = foods;
+        Price = price;
+        Save = save;
+        Old_price = old_price;
+        Date = date;
+        Imghinh = imghinh;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getRating() {
-        return rating;
+        return Rating;
     }
 
     public void setRating(String rating) {
-        this.rating = rating;
+        Rating = rating;
     }
 
-    public String getTen() {
-        return ten;
+    public String getName() {
+        return Name;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getMota() {
-        return mota;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setMota(String mota) {
-        this.mota = mota;
+    public void setAddress(String address) {
+        Address = address;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getFoods() {
+        return Foods;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setFoods(String foods) {
+        Foods = foods;
     }
 
-    public String getGia() {
-        return gia;
+    public String getPrice() {
+        return Price;
     }
 
-    public void setGia(String gia) {
-        this.gia = gia;
+    public void setPrice(String price) {
+        Price = price;
     }
 
     public String getSave() {
-        return save;
+        return Save;
     }
 
     public void setSave(String save) {
-        this.save = save;
+        Save = save;
     }
 
-    public String getGiacu() {
-        return giacu;
+    public String getOld_price() {
+        return Old_price;
     }
 
-    public void setGiacu(String giacu) {
-        this.giacu = giacu;
+    public void setOld_price(String old_price) {
+        Old_price = old_price;
     }
 
-    public String getNgay() {
-        return ngay;
+    public String getDate() {
+        return Date;
     }
 
-    public void setNgay(String ngay) {
-        this.ngay = ngay;
+    public void setDate(String date) {
+        Date = date;
     }
 
-    public int getAnh() {
-        return anh;
+    public String getImghinh() {
+        return Imghinh;
     }
 
-    public void setAnh(int anh) {
-        this.anh = anh;
+    public void setImghinh(String imghinh) {
+        Imghinh = imghinh;
     }
 }
