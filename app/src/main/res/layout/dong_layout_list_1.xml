@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -25,13 +24,13 @@
     <TextView
         android:id="@+id/txt_view_detail_item_list1"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:drawableRight="@drawable/icons_arrow"
         android:text="VIEW DETAIL "
-        android:textColor="@color/color_detail"
         android:textSize="12sp"
+        android:textColor="@color/color_detail"
         app:layout_constraintEnd_toEndOf="@+id/txt_diachi_item_list1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_diachi_item_list1"
@@ -39,14 +38,13 @@
 
     <TextView
         android:id="@+id/txt_diachi_item_list1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:paddingRight="30dp"
         android:text="45 W.Lincol St. Morganton, NY, 218864"
         android:textColor="@color/color_address_list1"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_located_item_list1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_located_item_list1"
         app:layout_constraintTop_toBottomOf="@+id/txt_located_item_list1" />
@@ -58,7 +56,7 @@
         android:layout_marginTop="8dp"
         android:text="LOCATED AT -"
         android:textColor="@color/color_located_list1"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/ratingBar_item_list1"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,15 +83,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
         android:text="5 time awarded - the start queen hotel"
         android:textAllCaps="true"
         android:textColor="#212121"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/img_item_layout_list1"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/img_item_layout_list1"
         app:layout_constraintTop_toBottomOf="@+id/img_item_layout_list1" />
 </android.support.constraint.ConstraintLayout>
