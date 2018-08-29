@@ -8,7 +8,7 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="#cccccc"
         android:orientation="vertical"
@@ -27,14 +27,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/attr"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.29000002"
-            app:srcCompat="@drawable/anhdep" />
+            app:srcCompat="@drawable/profile" />
 
         <TextView
             android:id="@+id/textView4"
@@ -61,6 +60,7 @@
             android:textAllCaps="true"
             android:textColor="#e1e1e1"
             android:textSize="14sp"
+            android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -81,26 +81,65 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.120000005"
             app:srcCompat="@drawable/icons_share" />
+
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_layout_fragment_layout_details"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:background="#cccccc"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    </android.support.design.widget.TabLayout>
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="HELP DESK"
+            android:drawableTop="@drawable/phonecall"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager_fragment_layout_details"
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="BOOKMARKS"
+            android:textColor="#fff"
+            android:drawableTop="@drawable/bookmark_while"
+            android:background="#cccccc"/>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="REVIEWS"
+            android:textColor="#fff"
+            android:drawableTop="@drawable/chat_while"
+            android:background="#cccccc"/>
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_below="@id/tab_layout_fragment_layout_details"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layout_fragment_layout_details" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+    </android.support.constraint.ConstraintLayout>
+
+
 </android.support.constraint.ConstraintLayout>
