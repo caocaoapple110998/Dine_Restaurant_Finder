@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/txtLatest_new_grid"
+            android:gravity="center"
+            android:text="Latest News"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:background="@drawable/background_list1"
+            android:id="@+id/txtMost_new_grid"
+            android:gravity="center"
+            android:text="Most Viewed"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ln_newgrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <GridView
+            android:visibility="visible"
+            android:numColumns="2"
+            android:id="@+id/gv_new_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </GridView>
+    </LinearLayout>
+</LinearLayout>

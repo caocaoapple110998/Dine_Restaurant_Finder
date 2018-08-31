@@ -23,10 +23,10 @@ public class Details_Fragment extends Fragment {
     ImageView imageView;
     TabLayout tabLayout_details;
     ViewPager viewPager_details;
-    public static Favourites_Fragment newInstance() {
-        Favourites_Fragment fragment = new Favourites_Fragment();
-        return fragment;
-    }
+//    public static Favourites_Fragment newInstance() {
+//        Favourites_Fragment fragment = new Favourites_Fragment();
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,6 @@ public class Details_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_layout_details, container, false);
         imageView = (ImageView) v.findViewById(R.id.imginfo_detais);
-        tabLayout_details = v.findViewById(R.id.tab_layout_fragment_layout_details);
-        viewPager_details = v.findViewById(R.id.view_pager_fragment_layout_details);
 
         controll_image();
         return v;

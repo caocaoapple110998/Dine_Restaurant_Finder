@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/profile" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/txt_name_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -37,18 +37,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txt_content_comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.if Aenean commodo ligula eget dolor. Aenean massa. Cumdf sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="@+id/txt_name_comment"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name_comment" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txt_hours_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -57,6 +57,6 @@
         android:text="10 hours ago"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/txt_name_comment"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.asus.dine_restaurant_finder.Event.NewList;
+import com.example.asus.dine_restaurant_finder.Event.NewList_Class;
 import com.example.asus.dine_restaurant_finder.R;
 import com.squareup.picasso.Picasso;
 
@@ -18,9 +18,9 @@ public class NewList_Adapter extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<NewList> newListList;
+    private List<NewList_Class> newListList;
 
-    public NewList_Adapter(Context context, int layout, List<NewList> newListList) {
+    public NewList_Adapter(Context context, int layout, List<NewList_Class> newListList) {
         this.context = context;
         this.layout = layout;
         this.newListList = newListList;
@@ -65,7 +65,7 @@ public class NewList_Adapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        NewList newList = newListList.get(i);
+        NewList_Class newList = newListList.get(i);
 
         holder.txtTitle.setText(newList.getTitle());
         holder.txtDate.setText(newList.getDate());

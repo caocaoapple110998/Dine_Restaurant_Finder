@@ -17,8 +17,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.asus.dine_restaurant_finder.Adapter.NewList_Adapter;
-import com.example.asus.dine_restaurant_finder.Event.NewList;
+import com.example.asus.dine_restaurant_finder.Event.NewList_Class;
 import com.example.asus.dine_restaurant_finder.R;
+import com.example.asus.dine_restaurant_finder.Server;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,10 +34,11 @@ import java.util.ArrayList;
 public class Fragment_NewList extends Fragment {
 
 
-    String urlgetnewlist = "http://192.168.1.227/ThucTap/getnewlist.php";
+//    String urlgetnewlist = "http://192.168.1.227/ThucTap/getnewlist.php";
+    String urlgetnewlist = Server.Newlist;
 
     ListView lv_NewList;
-    ArrayList<NewList> arrayList;
+    ArrayList<NewList_Class> arrayList;
     NewList_Adapter adapter;
 
     @Nullable
@@ -50,7 +52,7 @@ public class Fragment_NewList extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("News");
+        getActivity().setTitle("News List");
 
 
         lv_NewList = (ListView) view.findViewById(R.id.lv_newlist);
@@ -71,7 +73,7 @@ public class Fragment_NewList extends Fragment {
                         for (int i = 0; i< response.length(); i++){
                             try {
                                 JSONObject object = response.getJSONObject(i);
-                                arrayList.add(new NewList(
+                                arrayList.add(new NewList_Class(
                                    object.getInt("Id"),
                                         object.getString("Title"),
                                         object.getString("Date"),

@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.asus.dine_restaurant_finder.Adapter.Item_list2_Adapter;
 import com.example.asus.dine_restaurant_finder.Event.Item_list2_Class;
 import com.example.asus.dine_restaurant_finder.R;
+import com.example.asus.dine_restaurant_finder.Server;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +31,8 @@ public class Fragment_Tablayout_List2 extends Fragment {
 
     GridView gv_list2;
 
-    String urlgetlist2 = "http://192.168.1.227/ThucTap/getlist2.php";
+//    String urlgetlist2 = "http://192.168.1.227/ThucTap/getlist2.php";
+    String urlgetlist2 = Server.List2;
 
     ArrayList<Item_list2_Class> arrayList_list2;
     Item_list2_Adapter adapter_list2;
@@ -45,7 +47,7 @@ public class Fragment_Tablayout_List2 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("List 2");
+            getActivity().setTitle("Restaurant List 2");
 
         gv_list2 = (GridView) view.findViewById(R.id.girdview_fragment_layout_list_2);
         arrayList_list2 = new ArrayList<>();

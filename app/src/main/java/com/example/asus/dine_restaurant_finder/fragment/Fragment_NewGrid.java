@@ -1,6 +1,5 @@
 package com.example.asus.dine_restaurant_finder.fragment;
 
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,8 +18,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.asus.dine_restaurant_finder.Adapter.Item_list1_Adapter;
-import com.example.asus.dine_restaurant_finder.Event.Item_List1_Class;
+import com.example.asus.dine_restaurant_finder.Adapter.New_Grid_Adapter;
+import com.example.asus.dine_restaurant_finder.Event.NewGrid_Class;
 import com.example.asus.dine_restaurant_finder.R;
 import com.example.asus.dine_restaurant_finder.Server;
 
@@ -30,69 +29,66 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Fragment_Tablayout_List1 extends Fragment {
+public class Fragment_NewGrid extends Fragment {
 
-//    String urlgetlist1 = "http://192.168.1.227/ThucTap/getlist1.php";
-    String urlgetlist1 = Server.List1;
-    GridView gv_list1;
+    String urlnewgrid = Server.NewGrid;
+    GridView gv_newgrid;
 
-    ArrayList<Item_List1_Class> arrayList_list1;
-    Item_list1_Adapter adapter_list1;
+    ArrayList<NewGrid_Class> arrayList_newgrid;
+    New_Grid_Adapter adapter_newgrid;
 
-    TextView txtMost_list1, txtRecom_list1;
-    LinearLayout ln_list1;
-
-
+    TextView txtMost_newgird, txtLatest_newgird;
+    LinearLayout ln_newgrid;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_layout_list1, container, false);
+        return inflater.inflate(R.layout.fragment_news_grid, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("List 1");
+        getActivity().setTitle("New Gird");
 
-        gv_list1 = (GridView)view.findViewById(R.id.gv_item_list1);
-        arrayList_list1 = new ArrayList<>();
+        gv_newgrid = (GridView)view.findViewById(R.id.gv_new_grid);
+        arrayList_newgrid = new ArrayList<>();
 
-        adapter_list1 = new Item_list1_Adapter(getActivity(), R.layout.dong_layout_list_1, arrayList_list1);
-        gv_list1.setAdapter(adapter_list1);
+        adapter_newgrid = new New_Grid_Adapter(getActivity(), R.layout.dong_newgrid_list, arrayList_newgrid);
+        gv_newgrid.setAdapter(adapter_newgrid);
 
-        GetList1(urlgetlist1);
+        Getnewgird(urlnewgrid);
         onClick(view);
     }
 
     private void onClick(View view) {
-        txtMost_list1 = (TextView)view.findViewById(R.id.txt_Most_List1);
-        txtRecom_list1 = (TextView)view.findViewById(R.id.txt_ReCom_List1);
-        ln_list1 = (LinearLayout)view.findViewById(R.id.ln_list1);
+        txtMost_newgird = (TextView)view.findViewById(R.id.txtMost_new_grid);
+        txtLatest_newgird = (TextView)view.findViewById(R.id.txtLatest_new_grid);
+        ln_newgrid = (LinearLayout)view.findViewById(R.id.ln_newgrid);
 
-        txtMost_list1.setOnClickListener(new View.OnClickListener() {
+        txtMost_newgird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ln_list1.setVisibility(View.GONE);
-                txtMost_list1.setBackgroundResource(R.drawable.background_list1);
-                txtRecom_list1.setBackgroundResource(R.color.color_white);
+                ln_newgrid.setVisibility(View.VISIBLE);
+                txtMost_newgird.setBackgroundResource(R.drawable.background_list1);
+                txtLatest_newgird.setBackgroundResource(R.color.color_white);
             }
         });
 
-        txtRecom_list1.setOnClickListener(new View.OnClickListener() {
+        txtLatest_newgird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ln_list1.setVisibility(View.VISIBLE);
-                txtRecom_list1.setBackgroundResource(R.drawable.background_list1);
-                txtMost_list1.setBackgroundResource(R.color.color_white);
+                ln_newgrid.setVisibility(View.GONE);
+                txtLatest_newgird.setBackgroundResource(R.drawable.background_list1);
+                txtMost_newgird.setBackgroundResource(R.color.color_white);
             }
         });
 
 
     }
 
-    private void GetList1(String urlgetlist1) {
+    private void Getnewgird(String urlgetlist1) {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, urlgetlist1, null,
                 new Response.Listener<JSONArray>() {
@@ -101,17 +97,18 @@ public class Fragment_Tablayout_List1 extends Fragment {
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject object_list1 = response.getJSONObject(i);
-                                arrayList_list1.add(new Item_List1_Class(
+                                arrayList_newgrid.add(new NewGrid_Class(
                                         object_list1.getInt("ID"),
                                         object_list1.getString("Title"),
-                                        object_list1.getString("Address"),
-                                        object_list1.getString("ImgHinh")
+                                        object_list1.getString("Date"),
+                                        object_list1.getString("Content"),
+                                        object_list1.getString("Imghinh")
                                 ));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
-                        adapter_list1.notifyDataSetChanged();
+                        adapter_newgrid.notifyDataSetChanged();
 //                            Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_SHORT).show();
                     }
                 },

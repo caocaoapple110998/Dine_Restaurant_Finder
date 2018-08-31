@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.asus.dine_restaurant_finder.MainActivity;
 import com.example.asus.dine_restaurant_finder.R;
+import com.example.asus.dine_restaurant_finder.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,7 +35,9 @@ public class Signin_Activity extends AppCompatActivity {
     private Button btnLogin;
     private ProgressDialog pDialog;
 
-    public static final String URL_LOGIN = "http://192.168.1.227/ThucTap/login.php";
+//    public static final String URL_LOGIN = "http://192.168.1.227/ThucTap/login.php";
+public static final String URL_LOGIN = Server.Login;
+
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
 

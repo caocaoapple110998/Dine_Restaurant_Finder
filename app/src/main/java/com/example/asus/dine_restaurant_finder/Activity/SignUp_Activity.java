@@ -19,6 +19,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.asus.dine_restaurant_finder.R;
+import com.example.asus.dine_restaurant_finder.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +37,9 @@ public class SignUp_Activity extends AppCompatActivity {
     private TextView btnLogin;
     private ProgressDialog pDialog;
 
-    public static final String REGISTER_URL = "http://192.168.1.227/ThucTap/regisrer.php";
+//    public static final String REGISTER_URL = "http://192.168.1.227/ThucTap/regisrer.php";
+
+    public static final String REGISTER_URL = Server.Register;
 
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";

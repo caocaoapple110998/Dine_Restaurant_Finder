@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/notification"
-        android:title="NOT"
+        android:id="@+id/home_nav"
+        android:title="HOME"
         android:icon="@drawable/notifilecation_menu">
     </item>
     <item
-        android:id="@+id/news"
-        android:title="NEWS"
+        android:id="@+id/list2_nav"
+        android:title="RESTAURANT LIST 2"
         android:icon="@drawable/news_menu">
     </item>
     <item
-        android:id="@+id/bookmarks"
-        android:title="BOOKMARKS"
-        android:icon="@drawable/bookmarks_menu">
+        android:id="@+id/profile_nav"
+        android:title="PROFILE"
+        android:icon="@drawable/progile_menu">
     </item>
     <item
-        android:id="@+id/offers"
-        android:title="OFFERS"
+        android:id="@+id/favourites_nav"
+        android:title="FAVOURITES"
         android:icon="@drawable/offers_menu">
     </item>
     <item
-        android:id="@+id/orders"
-        android:title="ORDERS"
+        android:id="@+id/newlist_nav"
+        android:title="NEWS LIST"
         android:icon="@drawable/order_menu">
     </item>
     <item
-        android:id="@+id/payments"
-        android:title="PAYMENTS"
+        android:id="@+id/newgird_nav"
+        android:title="NEWS GRID"
         android:icon="@drawable/payment_menu">
     </item>
     <item

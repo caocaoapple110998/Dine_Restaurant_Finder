@@ -4,16 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="5dp">
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/img_hinh_newgrid"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:scaleType="fitXY"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +23,7 @@
         app:srcCompat="@drawable/dummy" />
 
     <TextView
-        android:id="@+id/txt_tieude_item_list1"
+        android:id="@+id/txt_title_newgrid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -32,33 +31,33 @@
         android:textAllCaps="true"
         android:textColor="#212121"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintEnd_toEndOf="@+id/img_hinh_newgrid"
+        app:layout_constraintStart_toStartOf="@+id/img_hinh_newgrid"
+        app:layout_constraintTop_toBottomOf="@+id/img_hinh_newgrid" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/txt_date_newgrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="23rd March 2017"
         android:textColor="#b4b4b4"
-        app:layout_constraintEnd_toEndOf="@+id/txt_tieude_item_list1"
+        app:layout_constraintEnd_toEndOf="@+id/txt_title_newgrid"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_tieude_item_list1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_tieude_item_list1" />
+        app:layout_constraintStart_toStartOf="@+id/txt_title_newgrid"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_newgrid" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/txt_content_newgrid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Restaurants range from inexpensive and informal lunching or dining places catering to people working nearby"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintStart_toStartOf="@+id/txt_date_newgrid"
+        app:layout_constraintTop_toBottomOf="@+id/txt_date_newgrid" />
 
     <TextView
         android:id="@+id/textView34"
@@ -69,10 +68,10 @@
         android:drawableRight="@drawable/icons_arrow"
         android:text="IN"
         android:textColor="#d81b60"
-        app:layout_constraintEnd_toEndOf="@+id/textView33"
+        app:layout_constraintEnd_toEndOf="@+id/txt_content_newgrid"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView33"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintStart_toStartOf="@+id/txt_content_newgrid"
+        app:layout_constraintTop_toBottomOf="@+id/txt_content_newgrid" />
 
     <TextView
         android:id="@+id/textView35"
@@ -87,5 +86,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView34"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_content_newgrid" />
 </android.support.constraint.ConstraintLayout>
